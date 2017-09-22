@@ -7,6 +7,7 @@
     <string name="enter_hint">Enter a number</string>
     <string name="country">England</string>
     <string name="search">Search</string>
+    <string name="google">Google</string>
     <string name="result_initial">The result will display here</string>
     <string name="error_no_geo">no action defined for geo intent</string>
 </resources>

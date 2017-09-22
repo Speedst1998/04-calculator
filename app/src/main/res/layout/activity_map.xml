@@ -17,5 +17,13 @@
         android:layout_height="wrap_content"
         android:onClick="onClick"
         android:text="@string/search" />
+    <Button
+        style="@style/buttons"
+        android:id="@+id/google"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:onClick="onSearch"
+        android:text="@string/google" />
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package campbell.ca.hw;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,6 +32,19 @@ public class MapActivity extends AppCompatActivity {
         Uri  uri = Uri.parse("geo:0,0?q=" + Uri.encode(input));
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(uri);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            et.setText(R.string.error_no_geo);
+        }
+    }
+
+    public void onSearch(View v){
+
+        input = et.getText().toString();
+        Uri  uri = Uri.parse("geo:0,0?q=" + Uri.encode(input));
+        Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+        intent.putExtra(SearchManager.QUERY,input);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
