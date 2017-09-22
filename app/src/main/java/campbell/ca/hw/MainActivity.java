@@ -133,14 +133,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void showMap(View v) {
 
-        String country = getResources().getString(R.string.country);
-        Uri  geoLocation = Uri.parse("geo:0,0?q=" + Uri.encode(country));
+        String country = getResources().getString(R.string.country) + "  YOOOOO";
 
-        Intent geoIntent = new Intent(Intent.ACTION_VIEW);
+        Intent openMap = new Intent(this,MapActivity.class);
 
-        geoIntent.setData(geoLocation);
-        if (geoIntent.resolveActivity(getPackageManager()) != null) {
-            startActivity(geoIntent);
+        openMap.putExtra("country", country);
+        if (openMap.resolveActivity(getPackageManager()) != null) {
+            startActivity(openMap);
         } else {
             result.setText(R.string.error_no_geo);
         }
